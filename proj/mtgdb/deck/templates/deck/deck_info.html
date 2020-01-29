@@ -1,0 +1,35 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
+<div class="deck-info">
+    <div class="deck">
+        <h2>{{ deck.name }} made by {{ deck.player }}</h2>
+        <h3>Format: {{ deck.format }}</h3>
+        <h3>Cards in deck:</h3>
+        <div class="cards">
+            <table>
+                <th>Name</th>
+                <th>Qty</th>
+                <th>Type</th>
+                <th>CMC</th>
+                <th>Color(s)</th>
+                <th>Set</th>
+                <th>Rarity</th>
+            {% for member in memberships %}
+                <tr>
+                    <td>{{ member.card.name }}</td>
+                    <td>{{ member.qty }}</td>
+                    <td>{{ member.card.type }}</td>
+                    <td>{{ member.card.cmc }}</td>
+                    <td>{{ member.card.colors }}</td>
+                    <td>{{ member.card.set }}</td>
+                    <td>{{ member.card.rarity }}</td>
+                </tr>
+            {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

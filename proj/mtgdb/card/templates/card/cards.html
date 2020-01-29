@@ -1,0 +1,20 @@
+<div class="cards">
+        <table>
+            <th>Name</th>
+            <th>Type</th>
+            <th>CMC</th>
+            <th>Color(s)</th>
+            <th>Set</th>
+            <th>Rarity</th>
+        {% for card in cards %}
+            <tr>
+                <td>{{ card.name }}</td>
+                <td>{{ card.type }}</td>
+                <td>{{ card.cmc }}</td>
+                <td>{{ card.colors }}</td>
+                <td>{{ card.set }}</td>
+                <td>{{ card.rarity }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>

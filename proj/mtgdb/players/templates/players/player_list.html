@@ -1,0 +1,19 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
+<h1>Players</h1>
+<div class="cards">
+    <table>
+        <th>Name</th>
+        <th>DCI Number</th>
+    {% for player in players %}
+        <tr>
+            <td>{{ player }}</td>
+            <td>{{ player.dci_num }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
+<div class="event-info">
+    <div class="event">
+        <h2>{{ event.name }}</h2>
+        <h3>{{ event.format }} tournament on {{ event.date }} at {{ event.game_store }}</h3>
+    </div>
+
+    <div class="matches">
+        <h3>Matches:</h3>
+        <table style="margin-left: 40px;">
+            <th>Player 1</th>
+            <th></th>
+            <th>Player 2</th>
+        {% for match in matches %}
+        <tr>
+            {% if match.winner is not None %}
+                {% if match.winner == match.player_one %}
+                    <td style="font-weight: bold;">{{ match.player_one }}</td>
+                {% else %}
+                    <td>{{ match.player_one }}</td>
+                {% endif %}
+                <td>vs.</td>
+                {% if match.winner == match.player_two %}
+                    <td style="font-weight: bold;">{{ match.player_two }}</td>
+                {% else %}
+                    <td>{{ match.player_two }}</td>
+                {% endif %}
+            {% else %}
+                <td>{{ match.player_one }}</td>
+                <td>vs.</td>
+                <td>{{ match.player_two }}</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+        </table>
+    </div>
+</div>
+
+{% endblock %}

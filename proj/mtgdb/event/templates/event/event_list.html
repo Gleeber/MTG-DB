@@ -1,0 +1,14 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
+    <h1>Here are the events:</h1>
+    <div class="events">
+        {% for event in events %}
+            <div class="event">
+                <h2><a href="{% url 'event:info' id=event.id %}">{{ event.name }}</a></h2>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

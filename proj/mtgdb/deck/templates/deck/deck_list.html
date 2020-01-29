@@ -1,0 +1,14 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
+    <h1>Here are the decks:</h1>
+    <div class="decks">
+        {% for deck in decks %}
+            <div class="deck">
+                <h2><a href="{% url 'deck:info' id=deck.id %}">{{ deck.name }}</a></h2>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

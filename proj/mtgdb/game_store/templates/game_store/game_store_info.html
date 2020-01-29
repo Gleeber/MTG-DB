@@ -1,0 +1,18 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
+<div class="game-store-info">
+    <div class="game-store">
+        <h2>{{ game_store.name }}</h2>
+        <p>Phone number: {{ game_store.phone_num_formatted }}</p>
+        <p>Location:</p>
+        <p class='solid'>
+        {{ game_store.street }} <br>
+        {{ game_store.city }}, {{ game_store.state }} <br>
+        {{ game_store.zip }}
+        </p>
+    </div>
+</div>
+
+{% endblock %}

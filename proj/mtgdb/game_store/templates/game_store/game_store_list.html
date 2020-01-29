@@ -1,0 +1,14 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
+    <h1>Here are all the game stores:</h1>
+    <div class="game_stores">
+        {% for game_store in game_stores %}
+            <div class="game_store">
+                <h2><a href="{% url 'game_store:info' id=game_store.id %}">{{ game_store.name }}</a></h2>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

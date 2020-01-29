@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<style>
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+p.solid {
+    margin-left: 40px;
+    border-style: solid;
+    width: 200px;
+    padding: 5px;
+}
+
+.menu li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+td, th{
+    border: 1px solid #dddddd;
+    padding: 8px;
+}
+
+</style>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>MTGDB</title>
+        <ul class="menu">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'card:list' %}">Cards</a></li>
+            <li><a href="{% url 'deck:list' %}">Decks</a></li>
+            <li><a href="{% url 'players:list' %}">Players</a></li>
+            <li><a href="{% url 'game_store:list' %}">Game Stores</a></li>
+            <li><a href="{% url 'event:list' %}">Events</a></li>
+        </ul>
+    </head>
+    <body>
+        <div class='wrapper'>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

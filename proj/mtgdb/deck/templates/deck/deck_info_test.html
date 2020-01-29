@@ -1,0 +1,26 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
+<div class="deck-info">
+    <div class="deck">
+        <h2>{{ deck.name }}</h2>
+        <h3>Cards in deck:</h3>
+        <div class="cards">
+                <table>
+                    <th>Name</th>
+                    <th>CMC</th>
+                    <th>Color(s)</th>
+                {% for card in deck.cards.all %}
+                    <tr>
+                        <td>{{card.name}}</td>
+                        <td>{{card.cmc}}</td>
+                        <td>{{card.colors}}</td>
+                    </tr>
+                {% endfor %}
+                </table>
+            </div>
+    </div>
+</div>
+
+{% endblock %}
